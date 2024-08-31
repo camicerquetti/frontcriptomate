@@ -25,7 +25,7 @@ function App() {
     // Función para realizar la solicitud fetch
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/endpoint');
+        const response = await fetch('https://frontcriptomate-1.onrender.com/api/endpoint');
 
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
