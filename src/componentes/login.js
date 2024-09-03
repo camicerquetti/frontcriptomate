@@ -17,7 +17,7 @@ const LoginForm = () => {
     setSuccess('');
 
     try {
-      const response = await fetch('https://criptomate-jbch.onrender.com/api/login', { // Ajusta la URL según tu configuración
+      const response = await fetch('https://criptomate-jbch.onrender.com/api/endpoint/login', { // Ajusta la URL según tu configuración
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
