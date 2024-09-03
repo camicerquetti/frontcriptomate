@@ -42,7 +42,7 @@ const RegisterForm = () => {
 
     try {
       // Enviar los datos al backend
-      await axios.post('http://localhost:3001/api/register', formValues);
+      await axios.post('https://criptomate-jbch.onrender.com/api/register', formValues);
 
       // Manejar respuesta exitosa
       setSuccessMessage('User registered successfully!');
