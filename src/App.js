@@ -83,12 +83,6 @@ function App() {
             <Route path="/UserList" element={<UserList />} />
             <Route path="/Notfound" element={<NotFound />} /> 
           </Routes>
-          <div>
-            <h1>Data from Backend:</h1>
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error.message}</p>}
-            {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
-          </div>
         </main>
         <Footer />
       </div>
