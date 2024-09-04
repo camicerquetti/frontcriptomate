@@ -21,7 +21,7 @@ const FormularioContacto = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://criptomate-jbch.onrender.com/api/endpoint/contact', { // Ajusta la URL si es necesario
+      const response = await fetch('https://criptomate-jbch.onrender.com/api/contact', { // Ajusta la URL si es necesario
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
