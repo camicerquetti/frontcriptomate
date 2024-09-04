@@ -27,7 +27,7 @@ const SendCoins = () => {
     }
   
     try {
-      const response = await axios.post('https://criptomate-jbch.onrender.com/api/enviodemonedas', {
+      const response = await axios.post('https://criptomate-jbch.onrender.com/enviodemonedas', {
         fromUserId: parseInt(fromUserId, 10),
         toUserId: parseInt(toUserId, 10),
         amount: parseFloat(amount),
