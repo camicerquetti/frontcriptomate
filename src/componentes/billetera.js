@@ -91,7 +91,7 @@ const Billetera = () => {
 
       console.log('Sending coins with data:', requestData);
 
-      const response = await axios.post('http://localhost:3001/api/enviodemonedas', requestData, {
+      const response = await axios.post('https://criptomate-jbch.onrender.com/api/enviodemonedas', requestData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -139,7 +139,7 @@ const Billetera = () => {
 
       console.log('Requesting coins with data:', requestData);
 
-      const response = await axios.post('https://criptomate-jbch.onrender.com/requestcoins', requestData, {
+      const response = await axios.post('https://criptomate-jbch.onrender.com/api/requestcoins', requestData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
