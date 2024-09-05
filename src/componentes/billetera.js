@@ -36,7 +36,7 @@ const Billetera = () => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('Token is missing');
 
-      const response = await axios.get('https://criptomate-jbch.onrender.com/api/wallet', {
+      const response = await axios.get('https://criptomate-jbch.onrender.com/wallet', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -91,7 +91,7 @@ const Billetera = () => {
 
       console.log('Sending coins with data:', requestData);
 
-      const response = await axios.post('https://criptomate-jbch.onrender.com/api/enviodemonedas', requestData, {
+      const response = await axios.post('https://criptomate-jbch.onrender.com/enviodemonedas', requestData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -139,7 +139,7 @@ const Billetera = () => {
 
       console.log('Requesting coins with data:', requestData);
 
-      const response = await axios.post('https://criptomate-jbch.onrender.com/api/requestcoins', requestData, {
+      const response = await axios.post('https://criptomate-jbch.onrender.com/requestcoins', requestData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
