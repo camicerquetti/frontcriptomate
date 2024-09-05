@@ -36,7 +36,7 @@ const Billetera = () => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('Token is missing');
 
-      const response = await axios.get('http://localhost:3001/api/wallet', {
+      const response = await axios.get('https://criptomate-jbch.onrender.com/api/wallet', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
