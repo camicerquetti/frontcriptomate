@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import { TextField, Button, Typography, Container, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom'; // Para redireccionar al usuario
-import '../App.css'; // Asegúrate de tener este archivo CSS
+import { TextField, Button, Typography, Container, Box, Link } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import '../App.css';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const navigate = useNavigate(); // Hook para redirigir al usuario
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     setError('');
     setSuccess('');
 
     try {
-      const response = await fetch('https://criptomate-jbch.onrender.com/login', { // Ajusta la URL según tu configuración
+      const response = await fetch('https://criptomate-jbch.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,13 +28,9 @@ const LoginForm = () => {
 
       if (response.ok) {
         setSuccess('Login successful');
-        localStorage.setItem('token', data.token); // Guardar el token en localStorage
-        localStorage.setItem('userId', data.userId); // Guardar el userId en localStorage
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('userId', data.userId);
 
-        // Log para verificar si se llega a esta línea
-        console.log('Login successful, redirecting to /billetera');
-        
-        // Redirigir a la página de billetera
         navigate('/billetera');
       } else {
         setError(data.error || 'Login failed');
@@ -82,6 +77,13 @@ const LoginForm = () => {
           >
             Iniciar Sesión
           </Button>
+          <Link
+            href="/recover-password"
+            variant="body2"
+            sx={{ mt: 2, display: 'block', textAlign: 'center' }}
+          >
+            Olvidaste tu contraseña?
+          </Link>
         </Box>
       </Box>
     </Container>

@@ -15,6 +15,7 @@ import Dashboard from './componentes/Dashboard';
 import NotFound from './componentes/Notfound';
 import UserList from './componentes/UserList';
 import Enviodemonedas from './componentes/enviodemonedas';
+import RecoverPassword from './componentes/recover-password';
 
 function App() {
   const [data, setData] = useState(null); // Estado para almacenar datos del backend
@@ -82,6 +83,7 @@ function App() {
             <Route path="/enviodemonedas" element={<Enviodemonedas />} />
             <Route path="/UserList" element={<UserList />} />
             <Route path="/Notfound" element={<NotFound />} /> 
+            <Route path="/recover-password" element={<RecoverPassword />} />
           </Routes>
         </main>
         <Footer />
